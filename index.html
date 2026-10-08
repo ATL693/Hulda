@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HULƊA — Nemo abin da kake buƙata</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7faf8;
+      color: #102a1d;
+    }
+
+    header {
+      background: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #087443;
+    }
+
+    .logo span {
+      color: #f5c400;
+    }
+
+    header button {
+      background: transparent;
+      border: 1px solid #087443;
+      color: #087443;
+      padding: 9px 15px;
+      border-radius: 8px;
+    }
+
+    .hero {
+      padding: 80px 7%;
+      text-align: center;
+      background: linear-gradient(135deg, #e9f7ef, #ffffff);
+    }
+
+    .hero small {
+      color: #087443;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.05;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #667085;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .search {
+      max-width: 750px;
+      margin: 30px auto;
+      background: white;
+      padding: 8px;
+      border-radius: 15px;
+      display: flex;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 15px;
+      font-size: 16px;
+    }
+
+    .search button {
+      background: #087443;
+      color: white;
+      border: none;
+      padding: 0 25px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .categories {
+      padding: 60px 7%;
+    }
+
+    .categories h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .icon {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .why {
+      padding: 60px 7%;
+      background: #087443;
+      color: white;
+      text-align: center;
+    }
+
+    .why h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .why p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    footer {
+      background: #062d1b;
+      color: white;
+      padding: 25px 7%;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      header {
+        padding: 15px 5%;
+      }
+
+      .hero {
+        padding: 60px 5%;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .search {
+        display: flex;
+      }
+
+      .search input {
+        width: 100%;
+      }
+
+      .search button {
+        padding: 0 15px;
+      }
+
+      .categories {
+        padding: 45px 5%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    HULƊA<span>.</span>
+  </div>
+
+  <button onclick="changeLanguage()">
+    English
+  </button>
+
+</header>
+
+
+<section class="hero">
+
+  <small>✦ HULƊA</small>
+
+  <h1>
+    Ka faɗi abin da kake nema,
+    HULƊA ta nemo maka wanda ya dace.
+  </h1>
+
+  <p>
+    Nemo mai sana'a, malami, technician,
+    designer ko wani service cikin sauƙi.
+  </p>
+
+  <div class="search">
+
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Misali: Ina neman mai gyaran waya..."
+    >
+
+    <button onclick="searchService()">
+      Nemo
+    </button>
+
+  </div>
+
+</section>
+
+
+<section class="categories">
+
+  <h2>Ayyukan da za ka iya nema</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">📱</div>
+      <h3>Gyaran Waya</h3>
+      <p>Nemo masu gyaran waya kusa da kai.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Graphic Design</h3>
+      <p>Nemo graphic designers da masu branding.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Malaman Darasi</h3>
+      <p>Nemo malamai na online ko kusa da kai.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛠️</div>
+      <h3>Masu Sana'a</h3>
+      <p>Nemo technicians da masu gyaran abubuwa.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="why">
+
+  <h2>Me yasa HULƊA?</h2>
+
+  <p>
+    HULƊA an tsara shi ne domin ya haɗa mutane
+    da masu sana'a da services cikin hanya mai sauƙi,
+    cikin harsuna daban-daban kamar Hausa da English.
+  </p>
+
+</section>
+
+
+<footer>
+
+  <strong>HULƊA<span>.</span></strong>
+
+  <p>Haɗa mutane da dama, cikin sauƙi.</p>
+
+</footer>
+
+
+<script>
+
+function searchService() {
+
+  const value =
+    document.getElementById("searchInput").value.trim();
+
+  if (value === "") {
+
+    alert("Da fatan ka rubuta abin da kake nema.");
+
+    return;
+  }
+
+  alert(
+    "HULƊA ta karɓi buƙatarka:\n\n" +
+    value +
+    "\n\nZa mu haɗa wannan da AI search a mataki na gaba."
+  );
+}
+
+
+function changeLanguage() {
+
+  alert(
+    "English mode zai kasance a version na gaba."
+  );
+
+}
+
+</script>
+
+</body>
+</html>
